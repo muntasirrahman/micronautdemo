@@ -9,18 +9,8 @@
         </encoder>
     </appender>
 
-    <timestamp key="byDate" datePattern="yyyyMMdd"/>
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender" >
-        <file>logs/app-${byDate}.log</file>
-        <append>true</append>
-        <immediateFlush>true</immediateFlush>
-        <encoder>
-            <pattern>%logger{35} - %msg%n</pattern>
-        </encoder>
-    </appender>
     <root level="info">
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILE" />
     </root>
 
 </configuration>
