@@ -1,8 +1,5 @@
 package example.micronaut;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
@@ -10,6 +7,9 @@ import io.micronaut.test.annotation.MicronautTest;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest // <1>
 public class HelloControllerTest {
@@ -26,4 +26,14 @@ public class HelloControllerTest {
         assertNotNull(body);
         assertEquals("Hello World", body);
     }
+
+    @Test
+    public void testSayHello() {
+        HttpRequest<String> request = HttpRequest.GET("/hello/Alice"); // <4>
+        String body = client.toBlocking().retrieve(request);
+
+        assertNotNull(body);
+        assertEquals("Hello Alice", body);
+    }
+
 }
