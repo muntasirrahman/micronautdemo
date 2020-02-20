@@ -21,7 +21,6 @@ public class HelloController {
             handler = new FileHandler("default.log", true);
             SimpleFormatter formatter = new SimpleFormatter();
             handler.setFormatter(formatter);
-
             logger.addHandler(handler);
 
         } catch (IOException e) {
