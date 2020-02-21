@@ -25,22 +25,18 @@ Why we need native binary compiler? Because we want to run it without Java VM, s
 
 This linux VM is necessary to generate native image, because the suggested way to use Docker container, can takes up to 2 hours to generate native image.
   
-#### SDKMAN Java Package Manager
-* A Java package manager 
-[SDKMAN](https://sdkman.io/install)
-
+#### [SDKMAN](https://sdkman.io/install) Java Package Manager
+ 
 `curl -s "https://get.sdkman.io | bash"`
 
 Open a new terminal, and type:
 `source "$HOME/.sdkman/bin/sdkman-init.sh"`
 
 #### Install GraalVM Java SDK
-
-List available Java SDK
+Once SDKMan installed, you can view available Java SDK, by typing:
 `sdk list java`
 
-Choose to install GraalVM Java
-
+Choose GraalVM Java
 `sdk install java 20.0.0.r11-grl`
 
 At the first column find the variant of Java SDK, which is GraalVM.
@@ -52,31 +48,22 @@ Find the most recent version  20.0.0.r11-grl at the most right column.
 
 #### Install native-image tool
 
+Ensure the current java SDK is GraalVM Java SDK:
+`sdk use java 20.0.0.r11-grl`
+
+then proceed with installation:
 `gu install native-image`
 
 #### Creating a decent Linux VM
 
+##### CentOS Linux VM
 
+* Update linux yum `sudo yum update`
+* Optionally you might need other utilities such as ssh, unzip, or git: `sudo yum install openssh-server unzip git`
+* Install gcc and its development libraries `sudo yum install glibc-devel glibc-devel zlib-devel gcc`
+* Install g++ C++ compiler and its development libraries `sudo install g++ glibc++-devel libstdc++6 libc++-devel libstdc++-static`
 
-*CentOS Linux*
-
-Update linux yum
-`sudo yum update`
-
-Optionally you might need other utilities such as ssh, unzip, or git:
-```
-sudo yum install openssh-server
-sudo yum install unzip
-sudo yum install git
-```
-
-Install gcc and its development libraries.
-`sudo yum install glibc-devel glibc-devel zlib-devel gcc`
- 
-Install g++ C++ compiler and its development libraries.
-`sudo install g++ glibc++-devel libstdc++6 libc++-devel libstdc++-static`
-
-*Ubuntu Linux*
+##### Ubuntu Linux VM
 
 Replace yum with apt-get.
   
