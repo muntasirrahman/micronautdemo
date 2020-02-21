@@ -33,5 +33,6 @@ native-image --no-server -cp build/libs/complete-0.1-all.jar
 ```shell script
 FROM oraclelinux:7-slim
 COPY micronautguide .
+EXPOSE 80
 RUN ./micronautguide
 ```
