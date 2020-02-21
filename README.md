@@ -4,15 +4,17 @@ This guide is a slight improvement of previous guide at http://guides.micronaut.
 
 ## Goals
 
-* Create a simple microservices, using Java EE.
+* Create a simple microservices, using Java EE, not Spring Boot :)
 * Deployed in a on minimum profile instance in a cloud provider
-* Alternatively, deployed in a small docker instance (or as part of a Kubernete cluster)
+* Alternatively, deployed in a small docker instance (or as part of a Kubernetes cluster)
+
+Why we need native binary compiler? Because we want to run it without Java VM, so we can deploy that as a service in a very small cloud instance, or in docker container.
 
 ### 1.1. What you will need
 
 * Decent text editor e.g. vim
-* Or decent IDE e.g. Intellij IDEA
-* JDK 1.8
+* Or decent IDE e.g. Intellij IDEA Community Edition
+* JDK with native image compiler e.g. GraalVM JDK
 
 ### 1.2. Pre-requisite software
 
@@ -52,13 +54,38 @@ Find the most recent version  20.0.0.r11-grl at the most right column.
 
 `gu install native-image`
 
+#### Creating a decent Linux VM
+
+
+
+*CentOS Linux*
+
+Update linux yum
+`sudo yum update`
+
+Optionally you might need other utilities such as ssh, unzip, or git:
+```
+sudo yum install openssh-server
+sudo yum install unzip
+sudo yum install git
+```
+
+Install gcc and its development libraries.
+`sudo yum install glibc-devel glibc-devel zlib-devel gcc`
+ 
+Install g++ C++ compiler and its development libraries.
+`sudo install g++ glibc++-devel libstdc++6 libc++-devel libstdc++-static`
+
+*Ubuntu Linux*
+
+Replace yum with apt-get.
+  
 #### Install Docker
 It depends on your OS: based on
 
 * CentOS [https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/](https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/)
 * Mac OS X [https://docs.docker.com/docker-for-mac](https://docs.docker.com/docker-for-mac/)
 * Windows 10 [https://runnable.com/docker/install-docker-on-windows-10](https://runnable.com/docker/install-docker-on-windows-10)
-
 
 
 ### 1.3. Get the source code from Github
