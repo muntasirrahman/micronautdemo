@@ -4,14 +4,9 @@ This guide is a slight improvement of previous guide at http://guides.micronaut.
 
 ## Goals
 
-* Create a simple microservices
-* Running on minimum profile instance in a cloud provider
-
-## 1. Preparation
-
-This is the guide to create a microservice written in Java EE, using:
-* micronaut
-* deployed in a small docker instance with minimal configuration
+* Create a simple microservices, using Java EE.
+* Deployed in a on minimum profile instance in a cloud provider
+* Alternatively, deployed in a small docker instance (or as part of a Kubernete cluster)
 
 ### 1.1. What you will need
 
@@ -25,7 +20,8 @@ This is the guide to create a microservice written in Java EE, using:
 * native-image tool
 * Docker
 * Linux VM with sufficient allocated RAM (8 GB) and CPU (4 cores)
-This linux VM is better than suggested way to use Docker container instance, because it can takes up to 2 hours to generate native image if we use docker.
+
+This linux VM is necessary to generate native image, because the suggested way to use Docker container, can takes up to 2 hours to generate native image.
   
 #### SDKMAN Java Package Manager
 * A Java package manager 
@@ -62,7 +58,6 @@ It depends on your OS: based on
 * CentOS [https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/](https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/)
 * Mac OS X [https://docs.docker.com/docker-for-mac](https://docs.docker.com/docker-for-mac/)
 * Windows 10 [https://runnable.com/docker/install-docker-on-windows-10](https://runnable.com/docker/install-docker-on-windows-10)
-
 
 #### 
 
