@@ -2,6 +2,11 @@
 
 This guide is a slight improvement of previous guide at http://guides.micronaut.io/creating-your-first-micronaut-app/guide/index.html
 
+## Goals
+
+* Create a simple microservices
+* Running on minimum profile instance in a cloud provider
+
 ## 1. Preparation
 
 This is the guide to create a microservice written in Java EE, using:
@@ -52,13 +57,21 @@ Find the most recent version  20.0.0.r11-grl at the most right column.
 `gu install native-image`
 
 #### Install Docker
+It depends on your OS: based on
 
+* CentOS [https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/](https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/)
+* Mac OS X [https://docs.docker.com/docker-for-mac](https://docs.docker.com/docker-for-mac/)
+* Windows 10 [https://runnable.com/docker/install-docker-on-windows-10](https://runnable.com/docker/install-docker-on-windows-10)
+
+
+#### 
 
 ### 1.3. Get the source code from Github
 
 Clone from Github.
 
-[Github repository https://github.com/muntasirrahman/micronautdemo](https://github.com/muntasirrahman/micronautdemo)
+Github repository [https://github.com/muntasirrahman/micronautdemo](https://github.com/muntasirrahman/micronautdemo)
+
 `git clone https://github.com/muntasirrahman/micronautdemo.git`
 
 
