@@ -32,7 +32,7 @@ This linux VM is necessary to generate native image, because the suggested way t
 Open a new terminal, and type:
 `source "$HOME/.sdkman/bin/sdkman-init.sh"`
 
-#### Install Graal Java SDK
+#### Install GraalVM Java SDK
 
 List available Java SDK
 `sdk list java`
@@ -59,22 +59,30 @@ It depends on your OS: based on
 * Mac OS X [https://docs.docker.com/docker-for-mac](https://docs.docker.com/docker-for-mac/)
 * Windows 10 [https://runnable.com/docker/install-docker-on-windows-10](https://runnable.com/docker/install-docker-on-windows-10)
 
-#### 
+
 
 ### 1.3. Get the source code from Github
 
-Clone from Github.
 
 Github repository [https://github.com/muntasirrahman/micronautdemo](https://github.com/muntasirrahman/micronautdemo)
 
 `git clone https://github.com/muntasirrahman/micronautdemo.git`
 
 
-## 6. Generating Micronaut Native 
+## 6. Generating Micronaut Native Image 
+
+Generate the native image binary
 
 ```shell script
 native-image --no-server -cp build/libs/complete-0.1-all.jar
 ```
+
+The native image is at the sub-directory complete.
+
+To change the output name, modify [native-image.properties](complete/src/main/resources/META-INF/native-image/example.micronaut/micronautguide/native-image.properties)
+
+Change this line:
+`-H:Name=micronautguide \` to something else.
 
 ## 7. Running it on Docker in Oracle Linux 7 Slim 
 
